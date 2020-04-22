@@ -54,37 +54,37 @@ class CiderUrlBuilderTests: XCTestCase {
     // MARK: Fetch
 
     func testFetchArtistRequest() {
-        var request = builder.fetchRequest(mediaType: .artists, id: "id123", include: nil)
+        let request = builder.fetchRequest(mediaType: .artists, id: "id123", include: nil)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/artists/id123")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
 
     func testFetchAlbumRequest() {
-        var request = builder.fetchRequest(mediaType: .albums, id: "id123", include: nil)
+        let request = builder.fetchRequest(mediaType: .albums, id: "id123", include: nil)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/albums/id123")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
 
     func testFetchSongRequest() {
-        var request = builder.fetchRequest(mediaType: .songs, id: "id123", include: nil)
+        let request = builder.fetchRequest(mediaType: .songs, id: "id123", include: nil)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/songs/id123")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
 
     func testFetchPlaylistRequest() {
-        var request = builder.fetchRequest(mediaType: .playlists, id: "id123", include: nil)
+        let request = builder.fetchRequest(mediaType: .playlists, id: "id123", include: nil)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/playlists/id123")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
 
     func testFetchMusicVideosRequest() {
-        var request = builder.fetchRequest(mediaType: .musicVideos, id: "id123", include: nil)
+        let request = builder.fetchRequest(mediaType: .musicVideos, id: "id123", include: nil)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/music-videos/id123")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
 
     func testFetchAlbumRequestWithInclude() {
-        var request = builder.fetchRequest(mediaType: .albums, id: "id123", include: [.artists, .tracks])
+        let request = builder.fetchRequest(mediaType: .albums, id: "id123", include: [.artists, .tracks])
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/albums/id123?include=artists,tracks")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
@@ -93,7 +93,7 @@ class CiderUrlBuilderTests: XCTestCase {
 
     func testRelationshipRequestWithLimitAndOffset() {
         let path = "/v1/catalog/us/artists/id123/albums"
-        var request = builder.relationshipRequest(path: path, limit: 25, offset: 50)
+        let request = builder.relationshipRequest(path: path, limit: 25, offset: 50)
         XCTAssertEqual(request.url, URL(string: "https://api.music.apple.com/v1/catalog/us/artists/id123/albums?limit=25&offset=50")!)
         XCTAssertEqual(request.allHTTPHeaderFields!, ["Authorization": "Bearer devToken"])
     }
