@@ -25,7 +25,7 @@ public struct TrackAttributes: Codable {
     public let url: URL
     public let workName: String? // Classical music only
     
-    public func duration() -> String? {
+    public var duration: String? {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional

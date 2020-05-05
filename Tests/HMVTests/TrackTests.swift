@@ -42,7 +42,7 @@ class TrackTests: XCTestCase {
         XCTAssertEqual(attributes.composerName, "Michael de Jong")
         XCTAssertEqual(attributes.discNumber, 1)
         XCTAssertEqual(attributes.durationInMillis, 327693)
-        XCTAssertEqual(attributes.duration(), "5:27")
+        XCTAssertEqual(attributes.duration, "5:27")
         XCTAssertEqual(attributes.genreNames, ["Singer/Songwriter", "Music", "Blues"])
         XCTAssertEqual(attributes.name, "Something For the Pain")
 
