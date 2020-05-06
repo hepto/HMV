@@ -26,6 +26,7 @@ class AlbumTests: XCTestCase {
         XCTAssertEqual(attributes.isSingle, false)
         XCTAssertEqual(attributes.releaseDate, "1991-10-22")
         XCTAssertEqual(attributes.trackCount, 20)
+        XCTAssertEqual(album.discCount(), nil)
         XCTAssertEqual(attributes.url, URL(string: "https://itunes.apple.com/us/album/20-all-time-greatest-hits/id900721190")!)
 
         XCTAssertEqual(attributes.artwork.bgColor, "ffffff")
@@ -67,7 +68,8 @@ class AlbumTests: XCTestCase {
         XCTAssertEqual(attributes.isComplete, true)
         XCTAssertEqual(attributes.isSingle, false)
         XCTAssertEqual(attributes.releaseDate, "1975-08-25")
-        XCTAssertEqual(attributes.trackCount, 8)
+        XCTAssertEqual(attributes.trackCount, 9)
+        XCTAssertEqual(album.discCount(), 2)
         XCTAssertEqual(attributes.url, URL(string: "https://itunes.apple.com/us/album/born-to-run/id310730204")!)
 
         XCTAssertEqual(attributes.artwork.bgColor, "ffffff")
