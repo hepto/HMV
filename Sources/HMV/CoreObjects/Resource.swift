@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Resource<AttributesType: Codable, RelationshipsType: Codable>: Codable {
+public struct Resource<AttributesType: Codable, RelationshipsType: Codable>: Codable, Identifiable {
     public let id: String
     public let type: MediaType
     public let href: String
