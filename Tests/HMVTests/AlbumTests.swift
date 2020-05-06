@@ -70,6 +70,10 @@ class AlbumTests: XCTestCase {
         XCTAssertEqual(attributes.releaseDate, "1975-08-25")
         XCTAssertEqual(attributes.trackCount, 9)
         XCTAssertEqual(album.discCount(), 2)
+        XCTAssertEqual(album.tracksForDisc(discNumber: 1)!.count, 8)
+        XCTAssertEqual(album.tracksForDisc(discNumber: 2)!.count, 1)
+        XCTAssertEqual(album.tracksForDisc(discNumber: 1)![0].attributes?.name, "Thunder Road")
+        XCTAssertEqual(album.tracksForDisc(discNumber: 2)![0].attributes?.name, "Jungleland (disc 2)")
         XCTAssertEqual(attributes.url, URL(string: "https://itunes.apple.com/us/album/born-to-run/id310730204")!)
 
         XCTAssertEqual(attributes.artwork.bgColor, "ffffff")

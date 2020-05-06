@@ -16,8 +16,18 @@ extension Album {
         if let tracks = self.relationships?.tracks.data {
             discCount = tracks.map { $0.attributes!.discNumber }.max()
         }
-        
         return discCount
+    }
+    
+    
+    public func tracksForDisc(discNumber: Int) -> [Track]? {
+        
+        var discTracks: [Track]?
+        
+        if let albumTracks = self.relationships?.tracks.data {
+            discTracks = albumTracks.filter { $0.attributes?.discNumber == discNumber }
+        }
+        return discTracks
     }
 }
 
