@@ -55,6 +55,14 @@ class TrackTests: XCTestCase {
         XCTAssertEqual(attributes.trackNumber, 7)
         XCTAssertEqual(attributes.url, URL(string: "https://itunes.apple.com/us/album/something-for-the-pain/id900032785?i=900032829")!)
     }
+  
+  func testTrackWithoutReleaseDate() throws {
+    let result = try fixture(ResponseRoot<Track>.self, name: "song")
+
+    let track = result.data![1]
+    
+    XCTAssertNil(track.attributes!.releaseDate)
+  }
 }
 
 #if os(Linux)
