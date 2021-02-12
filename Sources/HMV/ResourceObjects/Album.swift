@@ -11,7 +11,7 @@ public struct AlbumAttributes: Codable {
     public let artistName: String
     public let artwork: Artwork
     public let contentRating: ContentRating?
-    public let copyright: String
+    public let copyright: String?
     public let editorialNotes: EditorialNotes?
     public let genreNames: [String]
     public let isComplete: Bool
