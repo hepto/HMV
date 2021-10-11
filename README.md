@@ -1,3 +1,13 @@
+---
+# Deprecated
+
+⚠️ At WWDC Apple launched MusicKit for Swift that makes this project redundant.
+See [https://developer.apple.com/videos/play/wwdc2021/10294/](https://developer.apple.com/videos/play/wwdc2021/10294/)
+
+Big thanks to [@scottrhoyt](https://github.com/scottrhoyt) for providing this project originally.
+
+---
+
 # HMV
 The Missing Apple Music SDK. Written in Swift.
 
